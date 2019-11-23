@@ -1,0 +1,132 @@
+
+CREATE TABLE awards
+(
+	award_id              Numeric NOT NULL,
+	award_name            Character(50) NULL,
+	foundation            Numeric NULL
+);
+
+
+
+CREATE TABLE corp_series_vg
+(
+	series_id             Character(18) NOT NULL,
+	team_id               Numeric NULL,
+	corp_id               Numeric NOT NULL,
+	corp_name             Character(50) NULL
+);
+
+
+
+CREATE TABLE corp_team
+(
+	team_id               Numeric NOT NULL,
+	corp_id               Numeric NOT NULL
+);
+
+
+
+CREATE TABLE corporation
+(
+	corp_id               Numeric NOT NULL,
+	corp_name             Character(50) NULL,
+	foundation            Numeric NULL,
+	team_id               Numeric NULL,
+	founder               Character(50) NULL,
+	circulation_of_money  Numeric NULL,
+	net_profit            Numeric NULL,
+	employees             Numeric NULL
+);
+
+
+
+CREATE TABLE countries
+(
+	country_id            Numeric NOT NULL,
+	name                  Character(50) NULL
+);
+
+
+
+CREATE TABLE genres
+(
+	genre_id              Numeric NOT NULL,
+	genre_name            Character(50) NULL
+);
+
+
+
+CREATE TABLE platforms
+(
+	platf_id              Numeric NOT NULL,
+	name                  Character(50) NULL
+);
+
+
+
+CREATE TABLE programmers_team
+(
+	team_id               Numeric NOT NULL,
+	team_name             Character(50) NULL,
+	foundation            Numeric NULL,
+	employees             Numeric NULL
+);
+
+
+
+CREATE TABLE vg_awards
+(
+	vg_id                 Numeric NOT NULL,
+	award_id              Numeric NOT NULL,
+	year                  Numeric NULL
+);
+
+
+
+CREATE TABLE vg_country
+(
+	country_id            Numeric NOT NULL,
+	team_id               Numeric NOT NULL,
+	corp_id               Numeric NOT NULL
+);
+
+
+
+CREATE TABLE vg_genres
+(
+	genre_id              Numeric NOT NULL,
+	series_id             Numeric NOT NULL
+);
+
+
+
+CREATE TABLE vg_platf
+(
+	platf_id              Numeric NOT NULL,
+	vg_id                 Numeric NOT NULL
+);
+
+
+
+CREATE TABLE vg_series
+(
+	series_id             Character(18) NOT NULL,
+	series_name           Character(50) NULL,
+	film_adaptation       Character(50) NULL
+);
+
+
+
+CREATE TABLE videogames
+(
+	vg_id                 Numeric NOT NULL,
+	series_id             Numeric() NOT NULL,
+	vg_name               Character(50) NULL,
+	popularity            Float() NULL,
+	game_engine           Character(50) NULL,
+	age_restrictions      Numeric NULL,
+	single_player_game    Logical NULL,
+	multiplayer_game      Logical NULL
+);
+
+
